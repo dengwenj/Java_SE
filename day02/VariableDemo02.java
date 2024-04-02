@@ -32,5 +32,9 @@ public class VariableDemo02 {
     System.out.println(h);
     boolean i = false;
     System.out.println(i);
+
+    String name = "朴睦";
+    int age = 24;
+    char sex = '男';
   }
 }
