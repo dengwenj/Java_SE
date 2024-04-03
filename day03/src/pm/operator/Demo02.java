@@ -17,5 +17,8 @@ public class Demo02 {
         int num = 1;
         System.out.println(c + num); // 98
         System.out.println(c + c1); // 195
+
+        double d = 20.1;
+        double ddd = num + d;
     }
 }
