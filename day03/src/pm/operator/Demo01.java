@@ -15,5 +15,6 @@ public class Demo01 {
         System.out.println(10 % 3); // 1
         System.out.println(9 % 3); // 0
         System.out.println(8 % 3); // 2
+        System.out.println("");
     }
 }
