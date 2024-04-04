@@ -22,5 +22,15 @@ public class Demo01 {
                 System.out.println("default");
                 break;
         }
+
+        // switch 新特性 jdk12
+        switch(week) {
+            case 1 -> {
+                System.out.println("我有两行语句体");
+                System.out.println("我是一");
+            }
+            case 2 -> System.out.println("我是语句体2");
+            default -> System.out.println("default");
+        }
     }
 }
