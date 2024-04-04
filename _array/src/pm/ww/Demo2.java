@@ -13,5 +13,15 @@ public class Demo2 {
         // I：表示当前数组里面的元素都是 int 类型的
         // @：表示一个间隔符号
         // 36baf30c：才是数组真正的地址值（十六进制）
+
+        // 数组元素访问
+        // 格式：数组名[索引]
+        System.out.println(arr1[0]);
+
+        // 把数据存储到数组当中
+        // 格式：数组名[索引] = 具体数据/变量
+        System.out.println(arr1[1]);
+        arr1[1] = 200;
+        System.out.println(arr1[1]);
     }
 }
