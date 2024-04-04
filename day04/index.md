@@ -14,5 +14,5 @@
 * 6、case 给出的值不允许重复
 * default 的位置和省略：default 可以不用写在最后，任意地方都行
 * case 穿透：如果case 里面没有写 break，又匹配上了，后面的 case 也会执行
-* switch 新特性：jdk 12版本出的， case -> {}， 不用写 break，只有一行语句体时可以不用大括号
+* switch 新特性：jdk 12版本出的， case 值 -> {}， 不用写 break，只有一行语句体时可以不用大括号
 * switch 和 if 第三种合适各自使用的场景：if一般用于对范围的判断，switch 把有限个数据一一列举出来，任选其一
