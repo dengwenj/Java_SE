@@ -1,10 +1,10 @@
-package pm.operator;
+package pm._if.operator;
 
 public class Demo02 {
     public static void main(String[] args) {
         System.out.println(1 + "朴睦"); // 1朴睦
-        System.out.println(1 + 3 + "pm"); // 3pm
-        System.out.println(1 + "pm" + 3); // 1pm3
+        System.out.println(1 + 3 + "pm/_if"); // 3pm
+        System.out.println(1 + "pm/_if" + 3); // 1pm3
 
         String name = "朴睦";
         int age = 24;
