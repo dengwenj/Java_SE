@@ -23,5 +23,10 @@ public class Demo2 {
         System.out.println(arr1[1]);
         arr1[1] = 200;
         System.out.println(arr1[1]);
+
+        // 数组的遍历
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.println(arr1[i]);
+        }
     }
 }
