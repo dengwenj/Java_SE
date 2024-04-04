@@ -6,7 +6,7 @@ public class Demo04 {
         int num = 121;
         int temp = num;
         int num1 = 0;
-        while(num != 0) {
+        while (num != 0) {
             // 从右往左获取每一位数字
             int ge = num % 10;
             // 修改一下 x 记录的值
@@ -24,7 +24,7 @@ public class Demo04 {
         // 商
         int count = 0;
         // a < b 说明余数就是 a
-        while(a >= b) {
+        while (a >= b) {
             a = a - b;
             count++;
         }
