@@ -72,10 +72,17 @@ public class Demo05 {
         Random r1 = new Random();
         for (int i = 0; i < arr5.length; i++) {
             int num = r1.nextInt(arr5.length);
+            // 交换可以用到临时变量技点
             int temp = arr5[i];
             arr5[i] = arr5[num];
             arr5[num] = temp;
         }
         System.out.println(Arrays.toString(arr5));
+
+        int[] arr6 = {1, 2, 3};
+        int[] arr7 = arr6;
+        arr6[0] = 100;
+        System.out.println(Arrays.toString(arr6));
+        System.out.println(Arrays.toString(arr7));
     }
 }
