@@ -1,6 +1,7 @@
 package pm.ww1;
 
 public class Person {
+    // 成员变量
     private String name;
     private int age;
     private String sex;
@@ -9,17 +10,18 @@ public class Person {
     // set 方法：给成员变量赋值
     // get 方法：对外提供成员变量的值
 
-    public void setName(String n1) {
-        name = n1;
+    public void setName(String name) { // name 是局部变量
+        // this.name 是成员变量
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setAge(int a) {
-        if (a >= 18 && a < 50) {
-            age = a;
+    public void setAge(int age) {
+        if (age >= 18 && age < 50) {
+            this.age = age;
         } else {
             System.out.println("年龄不符合");
         }
@@ -29,8 +31,8 @@ public class Person {
         return age;
     }
 
-    public void setSex(String s) {
-        sex = s;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getSex() {
