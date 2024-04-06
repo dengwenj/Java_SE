@@ -37,6 +37,8 @@ public class Demo10 {
 
         System.out.println("红球数量：" + redCount);
         System.out.println("蓝球数量：" + blueCount);
+
+        // 根据红色数量和蓝色数量判断中了几等奖
     }
 
     public static int[] userInputNumber() {
