@@ -5,7 +5,7 @@ public class Demo06 {
         // 二维数组：当我们需要把数据分组管理的时候，就需要用到二维数组
         int[][] arr = new int[][]{
             {1, 2, 3, 4},
-            {5, 6, 7, 8}
+            {5, 6, 7, 8, 9, 10}
         };
 
         int[][] arr1 = {
@@ -34,5 +34,17 @@ public class Demo06 {
             }
             System.out.println();
         }
+
+        int[][] arr5 = new int[2][]; // 初始化里面的一维数组数 null
+        int[] arr6 = {11, 22};
+        int[] arr7 = {33, 44, 55, 66};
+        arr5[0] = arr6;
+        arr5[1] = arr7;
+
+        int[][] arr8 = new int[2][3];
+        int[] arr9 = {1, 2};
+        int[] arr10 = {3, 4, 5, 6};
+        arr8[0] = arr9;
+        arr8[1] = arr10;
     }
 }
