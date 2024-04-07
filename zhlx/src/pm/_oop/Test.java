@@ -2,8 +2,11 @@ package pm._oop;
 
 public class Test {
     public static void main(String[] args) {
-        GameRole ga1 = new GameRole("乔峰", 100);
-        GameRole ga2 = new GameRole("鸠摩智", 100);
+        GameRole ga1 = new GameRole("乔峰", 100, '男');
+        GameRole ga2 = new GameRole("鸠摩智", 100, '男');
+
+        ga1.showInfo();
+        ga2.showInfo();
 
         while (true) {
             ga1.play(ga2);
