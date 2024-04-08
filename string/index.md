@@ -19,3 +19,7 @@
 * boolean equals(要比较的字符串) 完全一样结果才是 true，否则为 false
 * boolean equalslgnoreCase(要比较的字符换) 忽略大小写的比较
 * 以后只要想比较字符串的内容，就必须要用 String 里面的方法
+
+## 遍历字符串
+* public char charAt(0): 根据索引返回字符，String name = "朴睦"; name.charAt(0) -> '朴'
+* public int length(): 返回此字符串的长度，String name = "朴睦"; name.length() -> 2
