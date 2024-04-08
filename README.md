@@ -30,3 +30,8 @@
 ## JDK、JRE、JVM 三者的包含关系
 * JDK 包含了 JRE
 * JRE 包含了 JVM
+
+## API
+* API(Application Programming Interface)：应用程序编程接口
+* API 就是别人已经写好的东西，我们不需要自己编写，直接使用即可
+* Java API：指的就是 JDK 中提供的各种功能的 Java 类
