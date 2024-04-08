@@ -28,3 +28,7 @@
 * String substring(int beginIndex, int endIndex) 截取
 * 注意点：包头不包尾，包左不包右，只有返回值才是截取的小串
 * String substring(int beginIndex) 截取到末尾
+
+## 字符串替换
+* String replace(旧值, 新值) 替换
+* 注意点：只有返回值才是替换之后的结果
