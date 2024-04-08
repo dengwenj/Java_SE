@@ -23,3 +23,8 @@
 ## 遍历字符串
 * public char charAt(0): 根据索引返回字符，String name = "朴睦"; name.charAt(0) -> '朴'
 * public int length(): 返回此字符串的长度，String name = "朴睦"; name.length() -> 2
+
+## 字符串截取
+* String substring(int beginIndex, int endIndex) 截取
+* 注意点：包头不包尾，包左不包右，只有返回值才是截取的小串
+* String substring(int beginIndex) 截取到末尾
