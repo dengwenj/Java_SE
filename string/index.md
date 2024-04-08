@@ -18,3 +18,4 @@
 ## 字符串比较
 * boolean equals(要比较的字符串) 完全一样结果才是 true，否则为 false
 * boolean equalslgnoreCase(要比较的字符换) 忽略大小写的比较
+* 以后只要想比较字符串的内容，就必须要用 String 里面的方法
