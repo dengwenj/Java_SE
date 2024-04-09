@@ -32,3 +32,7 @@
 ## 字符串替换
 * String replace(旧值, 新值) 替换
 * 注意点：只有返回值才是替换之后的结果
+
+## StringBuilder 概述
+* StringBuilder 可以看成是一个容器，创建之后里面的内容是可变的
+* 作用：提高字符串的操作效率(StringBuilder 只是容器，来帮助我们操作字符串的工具，后续转成字符串 toString 方法)
