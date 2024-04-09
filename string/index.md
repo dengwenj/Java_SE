@@ -76,3 +76,21 @@ public class Demo01 {
 ## 使用 StringBuilder 的场景
 * 1、字符串的拼接
 * 2、字符串的反转
+
+## StringJoiner 
+* StringJoiner 和 StringBuilder 一样，也可以看成是一个容器，创建之后里面的内容是可变的
+* 作用：提高字符串的操作效率，而且代码编写特别简洁
+* StringJoiner 的构造方法
+* 1、public StringJoiner(间隔符号)：创建一个 StringJoiner 对象，指定拼接时的间隔符号
+* 2、public StringJoiner(间隔符号，开始符号，结束符号)：创建一个 StringJoiner 对象，指定拼接时的间隔符号、开始符号、结束符号
+* StringJoiner sj = new StringJoiner("---"): 1---2---3
+* StringJoiner sj = new StringJoiner(", ", "【", "】")：【1，2，3】
+* StringJoiner 的成员方法
+* 1、add(添加的内容)：添加数据，并返回对象本身
+* 2、length()：返回长度，字符出现的个数
+* 3、toString()：返回一个字符串，该字符串就是拼接之后的结果
+
+## String、StringBuilder、StringJoiner 总结
+* String：表示字符串的类，定义了很多操作字符串的方法
+* StringBuilder：一个可变的操作字符串的容器，可以高效的拼接字符串，还可以将容器里面的内容反转
+* StringJoiner：JDK8出现的一个可变的操作字符串的容器，可以高效，方便的拼接字符串，在拼接的时候，可以指定间隔符号，开始符号，结束符号
