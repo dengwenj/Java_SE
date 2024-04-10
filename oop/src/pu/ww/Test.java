@@ -18,6 +18,8 @@ public class Test {
         p2.call();
 
         Person person1 = new Person();
+//        Person.hg = "1";
+        Person.hg = "2";
         person1.name = "朴睦";
         person1.age = 24;
         person1.sex = "男";
