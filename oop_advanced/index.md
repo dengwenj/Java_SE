@@ -92,3 +92,14 @@ public class HelloWorld {
 * java 不支持多继承、但是支持多层继承
 * java 中所有的类都直接或者间接继承于 Object 类
 * 子类只能访问父类中非私有的成员
+
+* public 修饰的类名要与文件名一致
+
+## 子类到底能继承父类中的哪些内容？
+* 构造方法：非私有 不能，private 不能
+* 成员变量：非私有 能，private 能只不过不能直接使用(get set)
+* 成员方法：虚方法表 能，否则 不能
+
+## 虚方法表
+* 非 private、非 static、非 final
+
