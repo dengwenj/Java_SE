@@ -50,3 +50,17 @@ public class ArrUtil {
 * 1、静态方法中，只能访问静态
 * 2、非静态方法可以访问所有
 * 3、静态方法中没有 this 关键字
+
+## 重新认识 main 方法
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
+}
+```
+* public：被 JVM 调用，访问权限足够大
+* static：被 JVM 调用，不用创建对象，直接类名访问，因为 main 方法是静态的，所以测试类中其他方法也需要时静态的
+* void：被 JVM 调用，不需要给 JVM 返回值
+* main：一个通用的名称，虽然不是关键字，但是被 JVM 识别
+* String[] args：以前用于接收键盘录入数据的，现在没用
