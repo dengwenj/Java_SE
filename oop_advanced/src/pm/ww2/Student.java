@@ -36,6 +36,11 @@ public class Student {
     }
 
     public char getSex() {
+        dd();
         return sex;
+    }
+
+    public static void dd() {
+
     }
 }
