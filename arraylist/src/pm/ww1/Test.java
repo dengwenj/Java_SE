@@ -6,6 +6,12 @@ import java.util.Scanner;
 import java.util.StringJoiner;
 
 public class Test {
+    private static final String ADD_STUDENT = "1";
+    private static final String UPDATE_STUDENT = "3";
+    private static final String REMOVE_STUDENT = "2";
+    private static final String GET_STUDENT = "4";
+    private static final String EXIT = "5";
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -55,15 +61,15 @@ public class Test {
 
             boolean flag = false;
             switch (input) {
-                case "1" -> {
+                case ADD_STUDENT -> {
                     addStudent(list, scanner);
                 }
-                case "2" -> {
+                case REMOVE_STUDENT -> {
                     deleteStudent(list, scanner);
                 }
-                case "3" -> setStudent(list, scanner);
-                case "4" -> getStudent(list);
-                case "5" -> {
+                case UPDATE_STUDENT -> setStudent(list, scanner);
+                case GET_STUDENT -> getStudent(list);
+                case EXIT -> {
                     exit();
                     flag = true;
                 }
