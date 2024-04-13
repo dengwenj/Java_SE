@@ -266,3 +266,8 @@ public class HelloWorld {
 * 2、要么是抽象类
 * 注意1：接口和类的视线关系，可以单实现，也可以多实现。public class 类名 implements 接口名1, 接口名2 {}
 * 注意2：实现类还可以在继承一个类的同时实现多个接口 public class 类名 extends 父类 implements 接口名1, 接口名2 {}
+
+## 接口中成员的特点
+* 成员变量：只能是常量，默认修饰符：public static final
+* 构造方法：没有
+* 成员方法：jdk7以前，接口中只能定义抽象方法。默认修饰符：public abstract
