@@ -12,7 +12,7 @@ public class Car {
         e.show();
     }
 
-    public static class En {
+    public class En {
         String name;
 
         public void show() {
