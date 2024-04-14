@@ -12,5 +12,10 @@ public class Test {
         Outer.Inner2 oi2 = new Outer.Inner2();
         System.out.println(oi2.name);
         Outer.Inner2.method1();
+
+        System.out.println("-----------");
+
+        Outer o = new Outer();
+        o.show();
     }
 }
