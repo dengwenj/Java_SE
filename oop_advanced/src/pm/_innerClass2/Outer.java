@@ -22,4 +22,17 @@ public class Outer {
     public Inner getInnerI() {
         return new Inner();
     }
+
+    public void method2() {
+        System.out.println("method2");
+    }
+
+    // 静态内部类
+    public static class Inner2 {
+        String name = "朴睦";
+        public static void method1() {
+            System.out.println("method1");
+            new Outer().method2();
+        }
+    }
 }
