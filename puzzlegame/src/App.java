@@ -9,9 +9,9 @@ public class App {
         new GameJFrame();
 
         // 登录界面
-        new LoginJFrame();
+        //new LoginJFrame();
 
         // 注册界面
-        new RegisterJFrame();
+        //new RegisterJFrame();
     }
 }
