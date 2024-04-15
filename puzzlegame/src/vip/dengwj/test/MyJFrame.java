@@ -1,13 +1,10 @@
 package vip.dengwj.test;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.Random;
 
-public class MyJFrame extends JFrame implements ActionListener, MouseListener {
+public class MyJFrame extends JFrame implements ActionListener, MouseListener, KeyListener {
     public JButton jButton = new JButton("按钮");
     public JButton jButton2 = new JButton("按钮2");
     public JButton jButton3 = new JButton("鼠标监听");
@@ -33,6 +30,9 @@ public class MyJFrame extends JFrame implements ActionListener, MouseListener {
         jButton.addActionListener(this);
         jButton2.addActionListener(this);
         jButton3.addMouseListener(this);
+
+        // 键盘监听，要把其他事件注释掉才生效
+        this.addKeyListener(this);
 
         this.getContentPane().add(jButton);
         this.getContentPane().add(jButton2);
@@ -76,5 +76,20 @@ public class MyJFrame extends JFrame implements ActionListener, MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         System.out.println("鼠标退出");
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println("键盘按下");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println("键盘松开");
     }
 }
