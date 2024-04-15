@@ -3,11 +3,14 @@ package vip.dengwj.test;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
 
-public class MyJFrame extends JFrame implements ActionListener {
+public class MyJFrame extends JFrame implements ActionListener, MouseListener {
     public JButton jButton = new JButton("按钮");
     public JButton jButton2 = new JButton("按钮2");
+    public JButton jButton3 = new JButton("鼠标监听");
 
     public MyJFrame() {
         this.setSize(500, 500);
@@ -17,6 +20,7 @@ public class MyJFrame extends JFrame implements ActionListener {
 
         jButton.setBounds(0, 0, 100, 100);
         jButton2.setBounds(100, 0, 100, 50);
+        jButton3.setBounds(200, 0, 100, 50);
         // 添加动作事件，匿名内部类的方式
         /*jButton.addActionListener(new ActionListener() {
             @Override
@@ -28,9 +32,11 @@ public class MyJFrame extends JFrame implements ActionListener {
         // 实现类的方式
         jButton.addActionListener(this);
         jButton2.addActionListener(this);
+        jButton3.addMouseListener(this);
 
         this.getContentPane().add(jButton);
         this.getContentPane().add(jButton2);
+        this.getContentPane().add(jButton3);
         this.setVisible(true);
     }
 
@@ -42,5 +48,33 @@ public class MyJFrame extends JFrame implements ActionListener {
             Random r = new Random();
            jButton2.setLocation(r.nextInt(500), r.nextInt(500));
         }
+    }
+
+    /**
+     * 鼠标事件
+     */
+    @Override
+    public void mouseClicked(MouseEvent e) {
+       System.out.println("单击");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        System.out.println("鼠标按下");
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("鼠标释放");
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        System.out.println("鼠标进入");
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        System.out.println("鼠标退出");
     }
 }
