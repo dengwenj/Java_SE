@@ -9,11 +9,28 @@ public class GameJFrame extends JFrame {
         initJFrame();
         // 初始化菜单
         initMenu();
+        // 初始化图片
+        initImage();
 
         this.setVisible(true);
     }
 
-    public void initJFrame() {
+    private void initImage() {
+        int num = 1;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                // 创建一个图片 ImageIcon 的对象
+                ImageIcon icon = new ImageIcon("/Users/dengwenjie/Java/java_learn/puzzlegame/image/animal/animal3/" + num + ".jpg");
+                JLabel jLabel = new JLabel(icon);
+                // 指定图片位置
+                jLabel.setBounds(105 * j, 105 * i, 105, 105);
+                this.getContentPane().add(jLabel);
+                num++;
+            }
+        }
+    }
+
+    private void initJFrame() {
         this.setSize(603, 680);
         this.setTitle("拼图单机版");
         // 设置界面置顶
@@ -22,9 +39,11 @@ public class GameJFrame extends JFrame {
         this.setLocationRelativeTo(null);
         // 设置关闭模式
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // xy
+        this.setLayout(null);
     }
 
-    public void initMenu() {
+    private void initMenu() {
         // 初始化菜单
         String[] menus = {"功能", "关于我们"};
         String[][] menuItems = {
