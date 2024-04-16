@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Arrays;
 import java.util.Random;
 
 // 游戏界面
@@ -13,6 +14,15 @@ public class GameJFrame extends JFrame implements KeyListener {
     private final int[] blankPosition = new int[2];
     // 图片路径
     private String path = "puzzlegame/image/animal/animal3/";
+    // 是否胜利
+    private boolean isWin = false;
+    // 胜利的二维数组
+    private final int[][] winArr = new int[][]{
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 0}
+    };
 
     public GameJFrame() {
         // 初始化界面
@@ -56,6 +66,14 @@ public class GameJFrame extends JFrame implements KeyListener {
     private void initImage() {
         // 清空原本已经出现的所有图片
         this.getContentPane().removeAll();
+
+        // 胜利
+        if (win()) {
+            // 添加背景图片
+            JLabel bgc = new JLabel(new ImageIcon("puzzlegame/image/win.png"));
+            bgc.setBounds(200, 300, 197, 73);
+            this.getContentPane().add(bgc);
+        }
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -141,6 +159,10 @@ public class GameJFrame extends JFrame implements KeyListener {
     // 鼠标抬起
     @Override
     public void keyReleased(KeyEvent e) {
+        if (win()) {
+            return;
+        }
+
         int keyCode = e.getKeyCode();
 
         int one = blankPosition[0];
@@ -156,6 +178,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             // 左，空白右边的位置左移动
             temp = data[one][two + 1];
             data[one][two + 1] = blank;
+            data[one][two] = temp;
             blankPosition[1]++;
         } else if (keyCode == 38) {
             // 空白在下边上
@@ -165,6 +188,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             // 上，空白下面的图片向上移动
             temp = data[one + 1][two];
             data[one + 1][two] = blank;
+            data[one][two] = temp;
             blankPosition[0]++;
         } else if (keyCode == 39) {
             // 空白在右边上
@@ -174,6 +198,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             // 右，空白左边的图片想右移动
             temp = data[one][two - 1];
             data[one][two - 1] = 0;
+            data[one][two] = temp;
             blankPosition[1]--;
         } else if (keyCode == 40) {
             // 空白在上边上
@@ -183,9 +208,24 @@ public class GameJFrame extends JFrame implements KeyListener {
             // 下
             temp = data[one - 1][two];
             data[one - 1][two] = blank;
+            data[one][two] = temp;
             blankPosition[0]--;
+        } else if (keyCode == 87) {
+            // 按的 W 胜利
+            data = winArr;
         }
-        data[one][two] = temp;
         initImage();
+    }
+
+    // 判断是否胜利
+    private boolean win() {
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                if (data[i][j] != winArr[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
