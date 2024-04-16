@@ -2,20 +2,19 @@ package vip.dengwj.ui;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Arrays;
 import java.util.Random;
 
 // 游戏界面
-public class GameJFrame extends JFrame implements KeyListener {
+public class GameJFrame extends JFrame implements KeyListener, ActionListener {
     private int[][] data;
     // 找打 0 的索引，就是空白
     private final int[] blankPosition = new int[2];
     // 图片路径
     private String path = "puzzlegame/image/animal/animal3/";
-    // 是否胜利
-    private boolean isWin = false;
     // 胜利的二维数组
     private final int[][] winArr = new int[][]{
         {1, 2, 3, 4},
@@ -23,6 +22,8 @@ public class GameJFrame extends JFrame implements KeyListener {
         {9, 10, 11, 12},
         {13, 14, 15, 0}
     };
+    // 计步
+    private int countSteps;
 
     public GameJFrame() {
         // 初始化界面
@@ -66,6 +67,11 @@ public class GameJFrame extends JFrame implements KeyListener {
     private void initImage() {
         // 清空原本已经出现的所有图片
         this.getContentPane().removeAll();
+
+        // 计步
+        JLabel cs = new JLabel("步数：" + countSteps);
+        cs.setBounds(50, 30, 100, 20);
+        this.getContentPane().add(cs);
 
         // 胜利
         if (win()) {
@@ -122,7 +128,9 @@ public class GameJFrame extends JFrame implements KeyListener {
         for (int i = 0; i < menus.length; i++) {
             JMenu jMenu = new JMenu(menus[i]);
             for (int j = 0; j < menuItems[i].length; j++) {
-                jMenu.add(new JMenuItem(menuItems[i][j]));
+                JMenuItem item = new JMenuItem(menuItems[i][j]);
+                item.addActionListener(this);
+                jMenu.add(item);
             }
             jMenuBar.add(jMenu);
         }
@@ -168,7 +176,7 @@ public class GameJFrame extends JFrame implements KeyListener {
         int one = blankPosition[0];
         int two = blankPosition[1];
         int blank = data[one][two];
-        int temp = 0;
+        int temp;
         // 边界判断，空白在边上
         if (keyCode == 37) {
             // 空白在左边上
@@ -180,6 +188,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             data[one][two + 1] = blank;
             data[one][two] = temp;
             blankPosition[1]++;
+            countSteps++;
         } else if (keyCode == 38) {
             // 空白在下边上
             if (one == data.length - 1) {
@@ -190,6 +199,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             data[one + 1][two] = blank;
             data[one][two] = temp;
             blankPosition[0]++;
+            countSteps++;
         } else if (keyCode == 39) {
             // 空白在右边上
             if (two == 0) {
@@ -200,6 +210,7 @@ public class GameJFrame extends JFrame implements KeyListener {
             data[one][two - 1] = 0;
             data[one][two] = temp;
             blankPosition[1]--;
+            countSteps++;
         } else if (keyCode == 40) {
             // 空白在上边上
             if (one == 0) {
@@ -210,10 +221,12 @@ public class GameJFrame extends JFrame implements KeyListener {
             data[one - 1][two] = blank;
             data[one][two] = temp;
             blankPosition[0]--;
+            countSteps++;
         } else if (keyCode == 87) {
             // 按的 W 胜利
             data = winArr;
         }
+        System.out.println(countSteps);
         initImage();
     }
 
@@ -227,5 +240,30 @@ public class GameJFrame extends JFrame implements KeyListener {
             }
         }
         return true;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String title = e.getActionCommand();
+        if (title.equals("重新游戏")) {
+            countSteps = 0;
+            initData();
+            initImage();
+        } else if (title.equals("重新登录")) {
+            this.setVisible(false);
+            new LoginJFrame();
+        } else if (title.equals("关闭游戏")) {
+            System.exit(0);
+        } else if (title.equals("简介")) {
+            JDialog jd = new JDialog();
+            JLabel jLabel = new JLabel("https://dengwj.vip");
+            jLabel.setBounds(0, 0, 140, 100);
+            jd.getContentPane().add(jLabel);
+            jd.setSize(344, 344);
+            jd.setAlwaysOnTop(true);
+            jd.setLocationRelativeTo(null);
+            jd.setModal(true);
+            jd.setVisible(true);
+        }
     }
 }
