@@ -1,6 +1,7 @@
 package vip.dengwj.ui;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -47,13 +48,19 @@ public class GameJFrame extends JFrame {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 // 创建一个图片 ImageIcon 的对象
-                ImageIcon icon = new ImageIcon("/Users/dengwenjie/Java/java_learn/puzzlegame/image/animal/animal3/" + data[i][j] + ".jpg");
+                ImageIcon icon = new ImageIcon("puzzlegame/image/animal/animal3/" + data[i][j] + ".jpg");
                 JLabel jLabel = new JLabel(icon);
                 // 指定图片位置
-                jLabel.setBounds(105 * j, 105 * i, 105, 105);
+                jLabel.setBounds(105 * j + 83, 105 * i + 134, 105, 105);
+                jLabel.setBorder(new BevelBorder(BevelBorder.LOWERED));
                 this.getContentPane().add(jLabel);
             }
         }
+
+        // 添加背景图片
+        JLabel background = new JLabel(new ImageIcon("puzzlegame/image/background.png"));
+        background.setBounds(40, 40, 508, 560);
+        this.getContentPane().add(background);
     }
 
     private void initJFrame() {

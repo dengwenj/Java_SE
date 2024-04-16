@@ -91,5 +91,7 @@ public class MyJFrame extends JFrame implements ActionListener, MouseListener, K
     @Override
     public void keyReleased(KeyEvent e) {
         System.out.println("键盘松开");
+        System.out.println(e.getKeyChar());
+        System.out.println(e.getKeyCode());
     }
 }
