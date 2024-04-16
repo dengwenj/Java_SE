@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Arrays;
 import java.util.Random;
 
 // 游戏界面
@@ -12,6 +11,8 @@ public class GameJFrame extends JFrame implements KeyListener {
     private int[][] data;
     // 找打 0 的索引，就是空白
     private final int[] blankPosition = new int[2];
+    // 图片路径
+    private String path = "puzzlegame/image/animal/animal3/";
 
     public GameJFrame() {
         // 初始化界面
@@ -59,7 +60,7 @@ public class GameJFrame extends JFrame implements KeyListener {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 // 创建一个图片 ImageIcon 的对象
-                ImageIcon icon = new ImageIcon("puzzlegame/image/animal/animal3/" + data[i][j] + ".jpg");
+                ImageIcon icon = new ImageIcon(path + data[i][j] + ".jpg");
                 JLabel jLabel = new JLabel(icon);
                 // 指定图片位置
                 jLabel.setBounds(105 * j + 83, 105 * i + 134, 105, 105);
@@ -117,6 +118,24 @@ public class GameJFrame extends JFrame implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+        // 按的 A
+        if (keyCode == 65) {
+            // 先清除
+            this.getContentPane().removeAll();
+
+            // 添加完整图片
+            JLabel all = new JLabel(new ImageIcon(path + "all.jpg"));
+            all.setBounds(40, 65, 508, 560);
+            this.getContentPane().add(all);
+
+            // 添加背景图片
+            JLabel background = new JLabel(new ImageIcon("puzzlegame/image/background.png"));
+            background.setBounds(40, 40, 508, 560);
+            this.getContentPane().add(background);
+
+            this.getContentPane().repaint();
+        }
     }
 
     // 鼠标抬起
@@ -169,5 +188,4 @@ public class GameJFrame extends JFrame implements KeyListener {
         data[one][two] = temp;
         initImage();
     }
-
 }
