@@ -22,3 +22,9 @@
 * toString(): 一般会重写，打印对象时打印属性
 * equals(): 比较对象时会重写，比较对象属性值是否相同
 * clone(): 默认浅克隆
+
+## Objects
+* Objects 是一个对象工具类，提供了一些操作对象的方法
+* public static boolean equals(Object a, Object b) 先做非空判断，比较两个对象
+* public static boolean isNull(Object obj) 判断对象是否为 null，为 null 返回 true，反之
+* public static boolean nonNull(Object obj) 判断对象是否为 null，跟 isNull 的结果相反
