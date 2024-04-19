@@ -29,6 +29,9 @@
 * public static boolean isNull(Object obj) 判断对象是否为 null，为 null 返回 true，反之
 * public static boolean nonNull(Object obj) 判断对象是否为 null，跟 isNull 的结果相反
 
+## BigInteger
+* BigInteger 表示一个大整数
+
 ## BigInteger 构造方法
 * public BigInteger(int num, Random r) 获取随机大整数，范围：【0 ~ 2 的 num 次方 -1】
 * public BigInteger(String val) 获取指定的大整数
@@ -42,3 +45,13 @@
 * 如果 BigInteger 表示的超出 long 的范围，可以用构造方法获取
 * 对象一旦创建，BigInteger 内部记录的值不能发生改变
 * 只要进行计算都会产生一个新的 BigInteger 对象
+
+## BigInteger 存储上限
+* 数组中最多能存储元素个数：21亿多
+* 数组中每一位能表示的数字：42亿多
+* BigInteger 能表示的最大数字为：42亿的21亿次方
+
+## 总结
+* BigInteger b1 = new BigInteger("整数");
+* BigInteger b2 = BigInteger.valueOf(10);
+* 一些方法... b1.add(b2)
