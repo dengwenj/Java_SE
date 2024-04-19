@@ -28,3 +28,17 @@
 * public static boolean equals(Object a, Object b) 先做非空判断，比较两个对象
 * public static boolean isNull(Object obj) 判断对象是否为 null，为 null 返回 true，反之
 * public static boolean nonNull(Object obj) 判断对象是否为 null，跟 isNull 的结果相反
+
+## BigInteger 构造方法
+* public BigInteger(int num, Random r) 获取随机大整数，范围：【0 ~ 2 的 num 次方 -1】
+* public BigInteger(String val) 获取指定的大整数
+* public BigInteger(String val, int radix) 获取指定进制的大整数
+
+## BigInteger 静态方法
+* public static BigInteger valueOf(long val) 静态方法获取 BigInteger 的对象，内部有优化
+
+## BigInteger 构造方法小结
+* 如果 BigInteger 表示的数字没有超出 long 的范围，可以用静态方法获取
+* 如果 BigInteger 表示的超出 long 的范围，可以用构造方法获取
+* 对象一旦创建，BigInteger 内部记录的值不能发生改变
+* 只要进行计算都会产生一个新的 BigInteger 对象
