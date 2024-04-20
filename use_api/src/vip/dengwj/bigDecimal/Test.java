@@ -1,6 +1,7 @@
 package vip.dengwj.bigDecimal;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Test {
     public static void main(String[] args) {
@@ -27,5 +28,13 @@ public class Test {
         System.out.println(bd5 == bd6); // true
         BigDecimal bd7 = bd5.add(bd6);
         System.out.println(bd7); // 10
+
+        // 方法
+        BigDecimal bd8 = BigDecimal.valueOf(3);
+        BigDecimal bd9 = BigDecimal.valueOf(10);
+        BigDecimal bd10 = bd8.multiply(bd9);
+        System.out.println(bd10); // 30
+        BigDecimal bd11 = bd9.divide(bd8, 2, RoundingMode.HALF_UP);
+        System.out.println(bd11);  // 3.33
     }
 }

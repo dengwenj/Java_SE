@@ -96,3 +96,16 @@ public class Test {
     }
 }
 ```
+
+## BigDecimal 的作用是什么？
+* 表示较大的小数和解决小数运算精度失真问题
+
+## BigDecimal 的对象如何获取？
+* BigDecimal bd1 = new BigDecimal("较大的小数");
+* BigDecimal bd2 = BigDecimal.valueOf(0.1);
+
+## 常见操作
+* 加：add
+* 减：subtract
+* 乘：multiply
+* 除：divide（四舍五入：RoundingMode.HALF_UP）
