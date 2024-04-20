@@ -21,5 +21,11 @@ public class Test5 {
         System.out.println("aaa123aaa".matches(regex3)); // true
         System.out.println("bbb123bbb".matches(regex3)); // true
         System.out.println("ccc123ddd".matches(regex3)); // false
+
+        System.out.println("---------------");
+
+        String str = "我要学学编编编编程程程程程程";
+        String res = str.replaceAll("(.)\\1+", "$1");
+        System.out.println(res); // 我要学编程
     }
 }
