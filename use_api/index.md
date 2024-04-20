@@ -139,3 +139,7 @@ public class Test {
 * X{n} X, 正好n次
 * X{n,} X，至少n次
 * X{n,m} X，至少n但不超过m次
+
+## 字符串中方法传正则表达式的
+* public String replaceAll(String regex, String newStr)
+* public String[] split(String regex)
