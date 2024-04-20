@@ -162,3 +162,13 @@ public class Test {
 ## 非捕获分组
 * 分组之后不需要再用本组数据，仅仅把数据括起来，不占组号
 * (?:) (?=) (?!) 都是非捕获分组
+
+## 如何创建日期对象
+* Date date = new Date()
+* Date date = new Date(指定毫秒值)
+
+## 如何修改时间对象中的毫秒值
+* date.setTime(毫秒值)
+
+## 如何获取时间对象中的毫秒值
+* date.getTime()
