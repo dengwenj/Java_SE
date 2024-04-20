@@ -204,3 +204,23 @@ public class Test2 {
     }
 }
 ```
+
+## Calendar 概述
+* Calendar 代表了系统当前时间的日历对象，可以单独修改、获取时间中的年，月，日
+* 细节：Calendar 是一个抽象类，不能直接创建对象
+
+## 如何获取对象
+* 通过静态方法 getInstance 方法获取对象
+
+## 常见方法
+* gitTime()：获取日期对象
+* setTime(Date date)：给日历设置日期对象
+* getTimeInMillis()：拿到时间毫秒值
+* setTimeInMillis(long millis)：给日历设置时间毫秒值
+* get(int field)：取日历中的某个字段信息
+* set(int field, int value)：修改日历的某个字段信息
+* add(int field, int amount)：为某个字段增加/减少指定的值
+
+## 细节点
+* 日历类中月份的范围：0~11
+* 日历类中星期的特点：星期日是一周中的第一天
