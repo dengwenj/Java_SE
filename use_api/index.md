@@ -172,3 +172,7 @@ public class Test {
 
 ## 如何获取时间对象中的毫秒值
 * date.getTime()
+
+## SimpleDateFormat 类作用
+* 格式化：把时间变成我们喜欢的格式
+* 解析：把字符串表示的时间变成 Date 对象
