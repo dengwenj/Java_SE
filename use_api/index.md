@@ -377,3 +377,27 @@ public class Test {
 ## 如何获取包装类对象
 * 不需要 new, 不需要调用方法，直接赋值即可
 * Integer i = 10; Integer i2 = 10; Integer i3 = i1 + i2
+
+## 包装类的静态方法
+```
+// Integer 静态方法
+// 得到二进制
+String s = Integer.toBinaryString(100);
+System.out.println(s); // 1100100
+// 得到八进制
+String s1 = Integer.toOctalString(100);
+System.out.println(s1); // 144
+// 得到十六进制
+String s2 = Integer.toHexString(100);
+System.out.println(s2); // 64
+
+// 将字符串类型的整数转成 int 类型的整数
+int i = Integer.parseInt("123");
+System.out.println(i); // 123
+System.out.println(i + 1); // 124
+// 在类型转换的时候，括号中的参数只能是数字不能是其他
+// 8种包装类当中，除了 Character 都有对应的 parseXxx 的方法，进行类型转换
+String str = "true";
+boolean b = Boolean.parseBoolean(str);
+System.out.println(b); // true
+```
