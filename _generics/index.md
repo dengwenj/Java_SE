@@ -46,3 +46,9 @@ public class ListUtil {
     }
 }
 ```
+
+## 泛型接口
+* 修饰符 interface 接口名<类型> {}; public interface List<E> {}
+* 如何使用一个泛型的接口：
+* 1、实现类给出具体类型
+* 2、实现类延续泛型，创建对象时再确定
