@@ -13,8 +13,15 @@
 * boolean containsValue(Object value); 判断集合是否包含指定的值
 * boolean isEmpty(); 判断集合是否为空
 * int size(); 集合的长度，也就是集合中键值对的个数
-
+ 
 ## Map 的遍历方式
 * 1、键找值
 * 2、键值对
 * 3、Lambda 表达式
+
+## HashMap 的特点
+* 1、HashMap 是 Map 里面的一个实现类
+* 2、特点都是由键决定的：无序、不重复、无索引
+* 3、HashMap 和 HashSet 底层原理是一样的，都是哈希表结构
+* 4、依赖 hashCode 方法和 equals 方法保证键的唯一
+* 5、如果键存储的是自定义对象，需要重写 hashCode 和 equals 方法，值不需要
