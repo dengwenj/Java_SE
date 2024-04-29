@@ -13,3 +13,8 @@
 * boolean containsValue(Object value); 判断集合是否包含指定的值
 * boolean isEmpty(); 判断集合是否为空
 * int size(); 集合的长度，也就是集合中键值对的个数
+
+## Map 的遍历方式
+* 1、键找值
+* 2、键值对
+* 3、Lambda 表达式
