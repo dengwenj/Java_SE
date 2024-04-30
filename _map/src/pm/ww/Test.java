@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
+        System.out.println(1 & 7);
         // map 遍历
         Map<String, String> map = new HashMap<>();
 
