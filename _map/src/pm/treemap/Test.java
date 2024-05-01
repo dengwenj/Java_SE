@@ -23,6 +23,7 @@ public class Test {
         tm1.put(new Student("朴睦", 24), "上海");
         tm1.put(new Student("韩梅梅", 18), "北京");
         tm1.put(new Student("李雷", 24), "广州");
+        tm1.put(new Student("李雷", 24), "广州");
         // 按照学生年龄的升序排序，年龄一样按照姓名的字母排序，同姓名年龄视为同一个人
         System.out.println(tm1);
     }
