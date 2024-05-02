@@ -25,3 +25,9 @@
 * Stream<R> map(Function<T, R> mapper); 转换流中的数据类型
 * 注意1：中间方法，返回新的 Stream 流，原来的 Stream 流只能使用一次，建议使用链式编程
 * 注意2：修改 Stream 流中的数据，不会影响原来集合或者数组中的数据
+
+## Stream 流的终结方法
+* void forEach(Consumer action) 遍历
+* long count(); 统计
+* toArray(); 收集流中的数据，放到数组中
+* collect(Collector collector); 收集流中的数据，放到集合中
