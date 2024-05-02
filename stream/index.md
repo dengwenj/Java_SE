@@ -30,4 +30,4 @@
 * void forEach(Consumer action) 遍历
 * long count(); 统计
 * toArray(); 收集流中的数据，放到数组中
-* collect(Collector collector); 收集流中的数据，放到集合中
+* collect(Collector collector); 收集流中的数据，放到集合中(List Set Map)
