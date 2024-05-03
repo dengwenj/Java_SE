@@ -49,3 +49,8 @@
 
 ## 如果 try 中遇到了问题，那么 try 下面的其他代码还会执行吗？
 * 下面的代码就不会执行了，直接跳转到对应的 catch 当中，执行 catch 里面的语句体，但是如果没有对应 catch 与之匹配，那么还是会交给虚拟机进行处理
+
+## 异常中常见的方法
+* public String getMessage(); 返回此 throwable 的详细消息字符串
+* public String toString(); 返回此可抛出的简短描述
+* public void printStackTrace(); 在底层是利用 System.err.println 进行输出，把异常的错误信息输出在控制台，细节：仅仅是打印信息，不会停止程序运行
