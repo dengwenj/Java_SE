@@ -20,3 +20,10 @@
 * public String getPath(); 返回定义文件时使用的路径
 * public String getName(); 返回文件的名称，带后缀
 * public long lastModified(); 返回文件的最后修改时间（时间毫秒值）
+
+## File 的常见成员方法（创建、删除）
+* public boolean createNewFile(); 创建一个新的空的文件
+* public boolean mkdir(); 创建单级文件夹
+* public boolean mkdirs(); 创建多级文件夹
+* public boolean delete(); 删除文件、空文件夹
+* delete 方法默认只能删除文件和空文件夹，delete 方法直接删除不走回收站
