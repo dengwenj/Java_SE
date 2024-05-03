@@ -54,3 +54,18 @@
 * public String getMessage(); 返回此 throwable 的详细消息字符串
 * public String toString(); 返回此可抛出的简短描述
 * public void printStackTrace(); 在底层是利用 System.err.println 进行输出，把异常的错误信息输出在控制台，细节：仅仅是打印信息，不会停止程序运行
+
+## 抛出异常
+* throws：写在方法定义处，表示声明一个异常，告诉调用者，使用本方法可能有哪些异常
+* throw：写在方法内，结束方法，手动抛出异常对象，交给调用者，方法中下面的代码不再执行了
+* public void 方法() throws 异常类名1, 异常类名2... {}; 编译是异常：必须要写，运行时异常：可以不写
+* public void 方法() { throw new NullPointerException(); }
+
+## 虚拟机默认处理异常的方式
+* 把异常信息以红色字体打印在控制台，并结束程序
+
+## 捕获：try...catch
+* 一般用在调用处，能让代码继续往下运行
+
+## 抛出：throw、throws
+* 在方法中，出现异常了，方法就没有继续运行下去的意义了，采取抛出处理，让该方法结束运行并告诉调用者出现了问题
