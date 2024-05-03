@@ -36,3 +36,9 @@
 * 当调用者 File 表示的路径是一个有内容的文件夹时，将里面所有文件和文件夹的路径放在 File 数组中返回
 * 当调用者 File 表示的路径是一个有隐藏文件的文件夹时，将里面所有文件和文件夹的路径放在 File 数组中返回，包含隐藏文件
 * 当调用者 File 表示的路径是需要权限才能访问的文件夹时，返回 null
+* -------------------------
+* public static File[] listRoots(); 列出可用的文件系统根
+* public String[] list(); 获取当前该路径下所有内容
+* public String[] list(FilenameFilter filter); 利用文件名过滤器获取当前该路径下所有内容
+* public File[] listFilters(FileFilter filter); 利用文件名过滤器获取当前该路径下所有内容
+* public File[] listFilters(FilenameFilter filter); 利用文件名过滤器获取当前该路径下所有内容
