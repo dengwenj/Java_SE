@@ -22,10 +22,8 @@ public class Test {
                 int age = Integer.parseInt(ageStr);
                 person.setAge(age);
                 break;
-            } catch (NumberFormatException e) {
-                System.out.println("年龄请输入数字");
-            } catch (RuntimeException e) {
-                System.out.println("姓名或年龄输入有误");
+            } catch (NumberFormatException | AgeOutOfBoundsException | NameFormatException e) {
+                e.printStackTrace();
             }
         }
         System.out.println(person);

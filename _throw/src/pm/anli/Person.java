@@ -26,7 +26,7 @@ public class Person {
      */
     public void setName(String name) {
         if (name.length() < 3 || name.length() > 10) {
-            throw new RuntimeException();
+            throw new NameFormatException("姓名的长度需要在 3-10");
         }
         this.name = name;
     }
@@ -45,7 +45,7 @@ public class Person {
      */
     public void setAge(int age) {
         if (age < 18) {
-            throw new RuntimeException();
+            throw new AgeOutOfBoundsException("年龄的范围需要再 18 岁以上");
         }
         this.age = age;
     }
