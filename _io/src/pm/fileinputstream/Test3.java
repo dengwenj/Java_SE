@@ -9,7 +9,7 @@ public class Test3 {
         FileInputStream fis = new FileInputStream("_io/test.txt");
 
         byte[] bytes = new byte[2];
-        // 返回值：一个读了多少个字节
+        // 返回值：一次读了多少个字节
         // 读取的数据会放入到 bytes 里
         int len1 = fis.read(bytes);
         String str1 = new String(bytes, 0, len1);
