@@ -35,3 +35,8 @@
 * 细节：write 方法的参数是整数，但是实际上写到本地文件中的是整数在 ASCII 上对应的字符
 * 3、释放资源
 * 细节：每次使用完流之后都要释放资源
+
+## FileOutputStream 写数据的3种方式
+* void write(int b); 一次写一个字节数据
+* void write(byte[] b); 一次写一个字节数组数据
+* void write(byte[] b, int off, int len); 一次写一个字节数组的部分数据
