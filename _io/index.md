@@ -80,7 +80,7 @@ import java.io.IOException;
 public class Test3 {
     public static void main(String[] args) throws IOException {
         //一次读多个字节
-        FileInputStream fis = new FileInputStream("_io/test.txt");
+        FileInputStream fis = new FileInputStream("_io/demo.txt");
 
         byte[] bytes = new byte[2];
         // 返回值：一个读了多少个字节
@@ -120,3 +120,18 @@ public class Test3 {
 ## 如何不产生乱码？
 * 1、不要用字节流读取文本文件
 * 2、编码解码时使用同一个码表，同一个编码方式
+
+## 字符流
+* 字符流的底层其实就是字节流
+* 字符流 = 字节流 + 字符集
+* 特点：
+* 1、输入流：一次读一个字节，遇到中文时，一次读多个字节
+* 2、输出流：底层会把数据按照指定的编码方式进行编码，变成字节再写到文件中
+* 使用场景：对于纯文本文件进行读写操作
+
+## FileReader
+* 1、创建字符输入流对象：如果文件不存在，就直接报错
+* 2、读取数据
+* 细节一：默认也是一个字节一个字节的读取的，如果遇到中文就会一次读取多个
+* 细节二：在读取之后，方法的底层还会进行解码并转成十进制，最终把这个十进制作为返回值
+* 3、释放资源

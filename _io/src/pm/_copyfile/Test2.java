@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Test2 {
     public static void main(String[] args) throws IOException {
         // 一次读多个字节拷贝
-        FileInputStream fis = new FileInputStream("_io/test.txt");
+        FileInputStream fis = new FileInputStream("_io/demo.txt");
         FileOutputStream fos = new FileOutputStream("_io/src/pm/_copyfile/demo.txt");
 
         byte[] bytes = new byte[10];

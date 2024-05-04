@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Test2 {
     public static void main(String[] args) throws IOException {
         // 换行和续写, 创建对象时第二个参数传递 true 开启续写
-        FileOutputStream fos = new FileOutputStream("_io/test.txt", true);
+        FileOutputStream fos = new FileOutputStream("_io/demo.txt", true);
 
         String str = "nihaoshijie";
         fos.write(str.getBytes());

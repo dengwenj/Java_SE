@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Test3 {
     public static void main(String[] args) throws IOException {
         //一次读多个字节
-        FileInputStream fis = new FileInputStream("_io/test.txt");
+        FileInputStream fis = new FileInputStream("_io/demo.txt");
 
         byte[] bytes = new byte[2];
         // 返回值：一次读了多少个字节

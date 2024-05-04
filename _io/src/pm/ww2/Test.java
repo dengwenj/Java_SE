@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Test {
     public static void main(String[] args) throws IOException {
         // FileOutputStream 写数据的3种方式
-        FileOutputStream fos = new FileOutputStream("_io/test.txt");
+        FileOutputStream fos = new FileOutputStream("_io/demo.txt");
         // fos.write(97);
 
         byte[] bytes = {97, 98, 99, 100, 101};

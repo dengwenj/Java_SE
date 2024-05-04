@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Test1 {
     public static void main(String[] args) throws IOException {
         // 从本地文件读取数据
-        FileInputStream fis = new FileInputStream("_io/test.txt");
+        FileInputStream fis = new FileInputStream("_io/demo.txt");
 
         // 读取数据
         int read1 = fis.read();

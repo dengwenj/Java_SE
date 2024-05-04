@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Test {
     public static void main(String[] args) throws IOException {
         // 输入、输出
-        FileInputStream fis = new FileInputStream("_io/test.txt");
+        FileInputStream fis = new FileInputStream("_io/demo.txt");
         FileOutputStream fos = new FileOutputStream("_io/src/pm/_copyfile/demo.txt");
 
         // 核心思想：边读边写
