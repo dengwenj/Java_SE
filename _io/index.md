@@ -66,3 +66,40 @@
 * 细节二：读到文件末尾了，read 方法返回 -1
 * 3、释放资源
 * 细节一：每次使用完流必须要释放资源
+
+## FileInputStream 一次读多个字节
+* public int read(); 一次读一个字节数据
+* public int read(byte[] buffer); 一次读一个字节数组数据
+* 一次读一个字节数组的数据，每次读取会尽可能把数组装满
+```java
+package pm.fileinputstream;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Test3 {
+    public static void main(String[] args) throws IOException {
+        //一次读多个字节
+        FileInputStream fis = new FileInputStream("_io/test.txt");
+
+        byte[] bytes = new byte[2];
+        // 返回值：一个读了多少个字节
+        // 读取的数据会放入到 bytes 里
+        int len1 = fis.read(bytes);
+        String str1 = new String(bytes, 0, len1);
+        System.out.println(len1); // 2
+        System.out.println(str1); // ab
+
+        // bytes 会覆盖前面的数据
+        int len2 = fis.read(bytes);
+        String str2 = new String(bytes, 0, len2);
+        System.out.println(len2); // 2
+        System.out.println(str2); // cd
+
+        int len3 = fis.read(bytes);
+        String str3 = new String(bytes, 0, len3);
+        System.out.println(len3); // 1
+        System.out.println(str3); // e
+    }
+}
+```
