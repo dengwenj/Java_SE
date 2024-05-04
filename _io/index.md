@@ -41,7 +41,7 @@
 * void write(byte[] b); 一次写一个字节数组数据
 * void write(byte[] b, int off, int len); 一次写一个字节数组的部分数据
 
-## FileOutputStream 的作用
+## FileOutputStream 的作用 
 * 可以把程序中的数据写到本地文件上，是字节流的基本流
 
 ## 书写步骤
@@ -121,7 +121,7 @@ public class Test3 {
 * 1、不要用字节流读取文本文件
 * 2、编码解码时使用同一个码表，同一个编码方式
 
-## 字符流
+## 字符流(可以解决乱码问题)
 * 字符流的底层其实就是字节流
 * 字符流 = 字节流 + 字符集
 * 特点：
@@ -135,3 +135,21 @@ public class Test3 {
 * 细节一：默认也是一个字节一个字节的读取的，如果遇到中文就会一次读取多个
 * 细节二：在读取之后，方法的底层还会进行解码并转成十进制，最终把这个十进制作为返回值
 * 3、释放资源
+
+## FileWriter 书写细节
+* 1、创建字符输出流对象
+* 2、写数据
+* 细节：如果 write 方法的参数是整数，但是实际上写到本地文件中的是整数在字符集上对应的字符
+* 释放资源
+
+## FileWriter 构造方法
+* public FileWriter(File file); 创建字符输出流关联本地文件
+* public FileWriter(String pathname); 创建字符输出流关联本地文件
+* public FileWriter(File file, boolean append); 创建字符输出流关联本地文件，续写
+* public FileWriter(String file, boolean append); 创建字符输出流关联本地文件，续写
+* 读取数据
+* void write(int c); 写出一个字符
+* void write(String str); 写出一个字符串
+* void write(String str, int off, int len); 写出一个字符串的一部分
+* void write(char[] cbuf); 写出一个字符数组
+* void write(char[] cbuf, int off, int len); 写出字符数组的一部分
