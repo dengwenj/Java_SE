@@ -230,3 +230,6 @@ public class Test {
 ## 字符缓冲流两个特有的方法是什么？
 * 字符缓冲输入流：BufferedReader：readLine()
 * 字符缓冲输出流：BufferedWriter：newLine()
+
+## 原则
+* 什么时候用，什么时候创建。什么时候不用，什么时候关闭
