@@ -234,7 +234,7 @@ public class Test {
 ## 原则
 * 什么时候用，什么时候创建。什么时候不用，什么时候关闭
 
-## 转换流
+## 转换流(是字符流。可以把字节流转成字符流)
 * 是字符流和字节流之间的桥梁
 * 作用：
 * 1、指定字符集读写
@@ -246,3 +246,10 @@ public class Test {
 ## 转换流的名字是什么？
 * 字符转换输入流：InputStreamReader
 * 字符转换输出流：OutputStreamWriter
+
+## 序列化流/对象操作输出流
+* 可以把 java 中的对象写到本地文件中
+* public ObjectOutputStream(OutputStream out); 把基本流包装成高级流
+* public final void writeObject(Object obj); 把对象序列化（写出）到文件中去
+* 细节：使用对象输出流将对象保存到文件时会出现 NotSerializableException 异常
+* 解决方案：需要让 javabean 类实现 Serializable 接口
