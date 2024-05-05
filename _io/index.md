@@ -239,3 +239,10 @@ public class Test {
 * 作用：
 * 1、指定字符集读写
 * 2、字节流想要使用字符流中的方法
+
+## InputStreamReader(字符输入流)
+* InputStreamReader isr = new InputStreamReader(new FileInputStream("_io/src/pm/convertstream/test.txt"), "GBK");
+
+## 转换流的名字是什么？
+* 字符转换输入流：InputStreamReader
+* 字符转换输出流：OutputStreamWriter
