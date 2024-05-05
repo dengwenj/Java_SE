@@ -174,3 +174,8 @@ public class Test3 {
 ## 字节流和字符流的使用场景
 * 字节流：拷贝任意类型的文件
 * 字符流：读取纯文本文件中的数据；往纯文本文件中写出数据
+
+## 字节缓冲流
+* public BufferedInputStream(InputStream is); 把基本流包装成高级流，提高读取数据的性能
+* public BufferedOutputStream(OutputStream os); 把基本流包装成高级流，提高写出数据的性能
+* 原理：底层自带了长度为 8192 的缓冲区提高性能
