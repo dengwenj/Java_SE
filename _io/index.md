@@ -179,3 +179,54 @@ public class Test3 {
 * public BufferedInputStream(InputStream is); 把基本流包装成高级流，提高读取数据的性能
 * public BufferedOutputStream(OutputStream os); 把基本流包装成高级流，提高写出数据的性能
 * 原理：底层自带了长度为 8192 的缓冲区提高性能
+```java
+package pm.bufferediostream;
+
+import java.io.*;
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        // 创建缓冲流的对象
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream("_io/src/pm/bufferediostream/test.txt"));
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("_io/src/pm/bufferediostream/copy.txt"));
+
+        byte[] bytes = new byte[1024];
+        int len;
+        while ((len = bis.read(bytes)) != -1) {
+            bos.write(bytes, 0, len);
+        }
+
+        bos.close();
+        bis.close();
+    }
+}
+```
+
+## 字节缓冲流原理
+* 就是在内存中创建了 长度为 8192 byte[], 没有频繁的去和硬盘操作，节省性能
+
+## 字符缓冲流
+* public BufferedReader(Reader r); 把基本流变成高级流
+* public BufferedWriter(Writer r); 把基本流变成高级流
+* 原理：底层自带了长度为 8192 的缓冲区提高性能
+
+## 字符缓冲流特有方法
+* 字符缓冲输入流特有方法
+* public String readLine(); 读取一行数据，如果没有数据可读了，会返回 null
+* 字符缓冲输出流特有方法
+* public void newLine(); 跨平台的换行
+
+## 缓冲流有几种？
+* 字节缓冲输入流：BufferedInputStream
+* 字节缓冲输出流：BufferedOutputStream
+* 字符缓冲输入流：BufferedReader
+* 字符缓冲输出流：BufferedWriter
+
+## 缓冲流为什么能提高性能
+* 缓冲流自带长度为 8192 的缓冲区
+* 可以显著提高字节流的读写性能
+* 对于字符流提升不明显，对于字符缓冲流而言关键是两个特有的方法
+
+## 字符缓冲流两个特有的方法是什么？
+* 字符缓冲输入流：BufferedReader：readLine()
+* 字符缓冲输出流：BufferedWriter：newLine()
