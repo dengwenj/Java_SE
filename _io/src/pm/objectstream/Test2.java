@@ -9,7 +9,7 @@ public class Test2 {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("_io/src/pm/objectstream/test.txt"));
 
         Student o = (Student) ois.readObject();
-        System.out.println(o); // Student{name = 朴睦, age = 24}
+        System.out.println(o); // Student{name='朴睦', age=24, ww='null'}
 
         ois.close();
     }

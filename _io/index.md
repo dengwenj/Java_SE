@@ -259,3 +259,12 @@ public class Test {
 * public ObjectInputStream(InputStream out); 把基本流变成高级流
 * public Object readObject(); 把序列化到本地文件中的对象，读取到程序中来
 
+## 序列化流/反序列化流的细节汇总
+* 1、使用序列化流将对象写到文件时，需要让 javabean 类实现 Serializable 接口，否则，会出现 NotSerializableException 异常
+* 2、序列化流写到文件中的数据是不能修改的，一旦修改就无法再次读回来了
+* 3、序列化对象后，修改了 javabean 类，再次反序列化，会不会出现问题？
+* 会出现问题，会抛出 InvalidClassException 异常
+* 解决方案：给 javabean 类添加 serialVersionUID（序列号、版本号）
+* 4、如果一个对象中的某个成员变量的值不想被序列化，又该如何实现呢？
+* 解决方案：给该成员变量加 transient 关键字修饰，该关键字标记的成员变量不参与序列化过程
+

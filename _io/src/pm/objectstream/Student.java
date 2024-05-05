@@ -1,17 +1,24 @@
 package pm.objectstream;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Student implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 11L;
+
     private String name;
     private int age;
+    // 该变量不参与序列化过程
+    private transient String ww;
 
     public Student() {
     }
 
-    public Student(String name, int age) {
+    public Student(String name, int age, String ww) {
         this.name = name;
         this.age = age;
+        this.ww = ww;
     }
 
     /**
@@ -46,7 +53,12 @@ public class Student implements Serializable {
         this.age = age;
     }
 
+    @Override
     public String toString() {
-        return "Student{name = " + name + ", age = " + age + "}";
+        return "Student{" +
+            "name='" + name + '\'' +
+            ", age=" + age +
+            ", ww='" + ww + '\'' +
+            '}';
     }
 }
