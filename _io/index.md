@@ -287,3 +287,10 @@ public class Test {
 * public void println(Xxx xx); 特有方法：打印任意数据，自动刷新，自动换行
 * public void print(Xxx xx); 特有方法：打印任意数据，不换行
 * public void printf(String format, Object... args); 特有方法：带有占位符的打印语句，不换行
+
+## 字符打印流（底层有缓冲区，效率更高）
+* public PrintWriter(Write/File/String); 关联字节输出流/文件/文件路径
+* public PrintWriter(String fileName, Charset charset); 指定字符编码
+* public PrintWriter(Write w, boolean autoFlush); 自动刷新
+* public PrintWriter(OutputStream out, boolean autoFlush, Charset charset); 指定字符编码且自动刷新
+* 字符流底层有缓冲区，想要自动刷新需要开启
