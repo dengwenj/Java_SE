@@ -267,4 +267,23 @@ public class Test {
 * 解决方案：给 javabean 类添加 serialVersionUID（序列号、版本号）
 * 4、如果一个对象中的某个成员变量的值不想被序列化，又该如何实现呢？
 * 解决方案：给该成员变量加 transient 关键字修饰，该关键字标记的成员变量不参与序列化过程
+* 5、先写再读
 
+## 打印流
+* 分类：打印流一般是指：PrintStream、PrintWrite 两个类
+* 特点1：打印流只操作文件目的地，不操作数据源
+* 特点2：特有的写出方法可以实现，数据原样写出。列：打印：97，文件中：97
+* 特点3：特有的写出方法，可以实现自动刷新，自动换行。打印一次数据 = 写出 + 换行 + 刷新
+
+## 字节打印流构造方法
+* public PrintStream(OutputStream/File/String); 关联字节输出流/文件/文件路径
+* public PrintStream(String fileName, Charset charset); 指定字符编码
+* public PrintStream(OutputStream out, boolean autoFlush); 自动刷新
+* public PrintStream(OutputStream out, boolean autoFlush, String encoding); 指定字符编码且自动刷新
+* 字节流底层没有缓冲区，开不开自动刷新都一样
+
+## 字节打印流成员方法
+* public void write(int b); 常规方法：规则跟之前一样，将指定的字节写出
+* public void println(Xxx xx); 特有方法：打印任意数据，自动刷新，自动换行
+* public void print(Xxx xx); 特有方法：打印任意数据，不换行
+* public void printf(String format, Object... args); 特有方法：带有占位符的打印语句，不换行
