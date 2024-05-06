@@ -294,3 +294,14 @@ public class Test {
 * public PrintWriter(Write w, boolean autoFlush); 自动刷新
 * public PrintWriter(OutputStream out, boolean autoFlush, Charset charset); 指定字符编码且自动刷新
 * 字符流底层有缓冲区，想要自动刷新需要开启
+
+## 打印流有几种？各自有什么特点
+* 有字节打印流和字符打印流两种
+* 打印流不操作数据源，只能操作目的地（只能写）
+* 字节打印流：默认自动刷新（底层没有缓冲区），特有的 println 自动换行
+* 字符打印流：自动刷新需要开启（底层有缓冲区），特有的 println 自动换行
+
+## 解压缩流
+* 压缩包里面的每一个文件文件夹就是一个 ZipEntry 对象
+* 解压本质：把每一个 ZipEntry 按照层级拷贝到本地另一个文件夹中
+* ZipInputStream，字节解压缩流(输入、读)
