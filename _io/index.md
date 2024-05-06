@@ -305,3 +305,7 @@ public class Test {
 * 压缩包里面的每一个文件文件夹就是一个 ZipEntry 对象
 * 解压本质：把每一个 ZipEntry 按照层级拷贝到本地另一个文件夹中
 * ZipInputStream，字节解压缩流(输入、读)
+
+## 压缩流
+* 压缩本质：把每一个（文件/文件夹）看成 ZipEntry 对象放到压缩包中
+* ZipOutputStream
