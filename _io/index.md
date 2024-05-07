@@ -363,3 +363,23 @@ public class Test3 {
     }
 }
 ```
+
+## Commons-io
+* Commons-io 是 apache 开源基金组织提供的一组有关 IO 操作的开源工具包
+* 作用：提高 IO 流的开发效率
+
+## Commons-io 使用步骤
+* 1、在项目中创建一个文件夹：lib
+* 2、将 jar 包复制粘贴到 lib 文件夹
+* 3、右键点击 jar 包，选择 Add as Library -> 点击 OK
+* 4、在类中导包使用
+
+## Commons-io 常见方法
+* FileUtils类
+* static void copyFile(File srcFile, File destFile); 复制文件
+* static void copyDirectory(File srcDir, File destDir); 复制文件夹
+* static void copyDirectoryToDirectory(File srcDir, File destDir); 复制文件夹
+* static void deleteDirectory(File directory); 删除文件夹
+* static void cleanDirectory(File directory); 清空文件夹
+* static String readFileToString(File file, Charset encoding); 读取文件中的数据变成字符串
+* static void write(File file, CharSequence data, String encoding); 写出数据
