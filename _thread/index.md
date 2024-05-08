@@ -122,3 +122,27 @@ public class Test3 {
 * 2、实现 Runnable 接口，3、实现 Callable 接口
 * 优点：扩展性强，实现该接口的同时还可以继承其他的类
 * 缺点：编程相对复杂，不能直接使用 Thread 类中的方法
+
+## 常见的成员方法
+* String getName(); 返回此线程的名称
+* 
+* void setName(); 设置线程的名字（构造方法也可以设置名字）
+* 细节：
+* 1、如果我们没有给线程设置名字，线程也是有默认名字的。格式：Thread-X（X 序号，从0开始）
+* 2、如果我们要给线程设置名字，可以用 setName 方法进行设置，也可以构造方法设置
+* 
+* static Thread currentThread(); 获取当前线程的对象
+* 细节：
+* 当 JVM 虚拟机启动之后，会自动的启动多条线程，其中有一条线程是 main 线程，它的作用是去调用 main 方法，以前我们写的代码都是在 main 线程运行的
+* 
+* static void sleep(long time); 让线程休眠指定的时间，单位为毫秒
+* 细节：
+* 1、哪条线程执行到这个方法，那么哪条线程就会在这里停留对应的时间
+* 2、方法的参数：就表示睡眠的时间，单位毫秒
+* 3、当时间到了之后，线程会自动的醒来，继续执行下面的代码
+* 
+* setPriority(int newPriority); 设置线程的优先级
+* final int getPriority(); 获取线程的优先级
+* final void setDaemon(boolean on); 设置为守护线程
+* public static void yield(); 出让线程/礼让线程
+* public static void join(); 插入线程/插队线程
