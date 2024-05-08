@@ -143,6 +143,9 @@ public class Test3 {
 * 
 * setPriority(int newPriority); 设置线程的优先级，优先级不是绝对的，只是概率问题
 * final int getPriority(); 获取线程的优先级
+* 
 * final void setDaemon(boolean on); 设置为守护线程
+* 细节：当其他的所有非守护线程执行完毕之后，守护线程会陆续结束
+* 
 * public static void yield(); 出让线程/礼让线程
 * public static void join(); 插入线程/插队线程
