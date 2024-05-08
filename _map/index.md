@@ -68,3 +68,47 @@
 * 默认使用 HashMap（效率最高）
 * 如果要保证存取有序使用 LinkedHashMap
 * 如果要进行排序使用 TreeMap
+
+## 配置文件
+* 好处1：可以把软件的设置永久化存储
+* 好处2：如果我们要修改参数，不需要改动代码，直接修改配置文件就可以了
+
+## 常见的配置文件
+* XML、ini、properties、YAML
+
+## properties
+* properties 是一个双列集合，拥有 Map 集合所有的特点
+* 重点：有一些特有的方法，可以把集合中的数据，按照键值对的形式写到配置文件中，也可以把配置文件中的数据，读取到集合中来
+```java
+package pm.prop;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        // Properties，写入到配置文件 store，读取配置文件 load
+        Properties prop = new Properties();
+
+        prop.put("朴睦", "24");
+        prop.put("李雷", "20");
+        prop.put("韩梅梅", "18");
+        prop.put("她", "20");
+        System.out.println(prop);
+
+        // 写入到 properties 后缀文件
+        FileWriter fw = new FileWriter("_map/src/pm/prop/test.properties");
+
+        prop.store(fw, "test config file");
+        fw.close();
+
+        // 读取
+        FileReader fr = new FileReader("_map/src/pm/prop/test.properties");
+        prop.load(fr);
+        fr.close();
+        System.out.println(prop);
+    }
+}
+```
