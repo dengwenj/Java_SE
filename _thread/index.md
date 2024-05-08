@@ -26,3 +26,46 @@
 * 1、自己定义一个类继承 Thread
 * 2、重写 run 方法
 * 3、创建子类的对象，并启动线程 t.start()
+
+## 实现 Runnable 接口的方式进行实现
+* 1、自己定义一个类实现 Runnable 接口（可以是匿名内部类，就可以用 lambda 表达式）
+* 2、重写里面的 run 方法
+* 3、创建自己的类的对象
+* 4、创建一个 Thread 类的对象，并开启线程  new Thread(MyRun); MyRun 是一个类
+```java
+package pm.startmode;
+
+public class Test2 {
+    public static void main(String[] args) {
+        // 创建 MyRun 的对象
+        // 表示多线程要执行的任务
+        MyRun mr = new MyRun();
+
+        Thread t1 = new Thread(mr);
+        Thread t2 = new Thread(mr);
+
+        t1.setName("1");
+        t1.start();
+
+        t2.setName("2");
+        t2.start();
+
+        // 匿名内部类方式
+        new Thread(() -> {
+            for (int i = 0; i < 100; i++) {
+                System.out.println(Thread.currentThread().getName() + "多线程");
+            }
+        }, "3").start();
+
+
+        // 方法引用方式
+        new Thread(Test2::run1, "4").start();
+    }
+
+    public static void run1() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println(Thread.currentThread().getName() + "多线程");
+        }
+    }
+}
+```
