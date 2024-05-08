@@ -76,7 +76,7 @@
 ## 常见的配置文件
 * XML、ini、properties、YAML
 
-## properties
+## properties(结合 io 使用)
 * properties 是一个双列集合，拥有 Map 集合所有的特点
 * 重点：有一些特有的方法，可以把集合中的数据，按照键值对的形式写到配置文件中，也可以把配置文件中的数据，读取到集合中来
 ```java
