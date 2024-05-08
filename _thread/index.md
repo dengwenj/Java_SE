@@ -141,7 +141,7 @@ public class Test3 {
 * 2、方法的参数：就表示睡眠的时间，单位毫秒
 * 3、当时间到了之后，线程会自动的醒来，继续执行下面的代码
 * 
-* setPriority(int newPriority); 设置线程的优先级
+* setPriority(int newPriority); 设置线程的优先级，优先级不是绝对的，只是概率问题
 * final int getPriority(); 获取线程的优先级
 * final void setDaemon(boolean on); 设置为守护线程
 * public static void yield(); 出让线程/礼让线程
