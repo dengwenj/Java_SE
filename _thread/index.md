@@ -158,10 +158,49 @@ public class Test3 {
 * 把操作共享数据的代码锁起来
 * 格式：
 * synchronized (锁对象) { 操作共享数据的代码 }
-* 特点1：锁默认打开，有一个线程进去嘞，锁自动关闭
-* 特点2：里面的代码全部执行完毕，线程出现，锁自动打开
+* 特点1：锁默认打开，有一个线程进去了，锁自动关闭
+* 特点2：里面的代码全部执行完毕，线程出来，锁自动打开
 * 
 * sleep不会释放锁，但是会让出cpu执行权
 * java的Thread.sleep()相当于让线程睡眠，交出CPU，让CPU去执行其他的任务。 
 * 但是有一点要非常注意，sleep方法不会释放锁，也就是说如果当前线程持有对某个对象的锁，
 * 则即使调用sleep方法，其他和当前线程争抢的线程也无法访问这个对象，只能等待，等执行完
+
+## 同步方法
+* 就是把 synchronized 关键字加到方法上
+* 格式：修饰符 synchronized 返回值类型 方法名(方法参数) {...}
+* 特点1：同步方法是锁住方法里面所有的代码
+* 特点2：锁对象不能自己指定，非静态是 this，静态是当前类的字节码文件对象
+```java
+package pm.safe;
+
+public class MyRunnable implements Runnable {
+    private int ticker = 0;
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            while (true) {
+                if (syncMethod()) {
+                    break;
+                }
+            }
+        }
+    }
+
+    // 同步方法
+    public synchronized boolean syncMethod() {
+        if (ticker < 100) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            ticker++;
+            System.out.println(Thread.currentThread().getName() + "正在卖第" + ticker + "张票");
+            return false;
+        }
+        return true;
+    }
+}
+```

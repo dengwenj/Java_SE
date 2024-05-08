@@ -11,7 +11,7 @@ public class MyThread extends Thread {
     public void run() {
         while (true) {
             // 同步代码块
-            synchronized (obj) {
+            synchronized (MyThread.class) {
                 if (ticker < 100) {
                     try {
                         Thread.sleep(10);
