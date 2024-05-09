@@ -261,7 +261,7 @@ public class MyRunnable2 implements Runnable {
 * 两个锁嵌套起来了
 * 解决：不要让两个锁嵌套起来
 
-## 等待唤醒机制（生产者和消费者）
+## 等待唤醒机制（生产者和消费者）第一种方式
 * 消费者：
 * 1、判断桌子上是否有食物
 * 2、如果没有就等待
@@ -285,3 +285,12 @@ public class MyRunnable2 implements Runnable {
 * 2、同步代码块
 * 3、判断共享数据是否到了末尾（到了末尾）
 * 4、判断共享数据是否到了末尾（没有到末尾，执行核心逻辑）
+
+## 等待唤醒机制（阻塞队列方式实现）第二种方式
+* put数据时：放不进去，会等着，也叫做阻塞
+* take数据时：取出第一个数据，取不到会等着，也叫做阻塞
+
+## 阻塞队列的继承结构
+* 接口：Iterable、Collection、Queue、BlockingQueue
+* 实现类：ArrayBlockingQueue 底层是数组，有界
+* LinkedBlockingQueue 底层是链表，无界，但不是真正的无界，最大为 int 的最大值
