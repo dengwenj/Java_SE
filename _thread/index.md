@@ -278,3 +278,10 @@ public class MyRunnable2 implements Runnable {
 * void wait(); 当前线程等待，直到被其他线程唤醒
 * void notify(); 随机唤醒单个线程
 * void notifyAll(); 唤醒所有线程
+* await 会释放锁！！！！！！
+
+## 线程四步骤
+* 1、循环
+* 2、同步代码块
+* 3、判断共享数据是否到了末尾（到了末尾）
+* 4、判断共享数据是否到了末尾（没有到末尾，执行核心逻辑）
