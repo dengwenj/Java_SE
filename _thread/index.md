@@ -204,3 +204,55 @@ public class MyRunnable implements Runnable {
     }
 }
 ```
+
+## Lock 锁
+* 虽然可以理解同步代码块和同步方法的锁对象问题
+* 但是并没有直接看到在哪里加上了锁，在哪里释放了锁
+* 为了更清晰的表达如何加锁和释放锁，JDK5以后提供了一个新的锁对象 Lock
+* Lock实现提供比使用 synchronized 方法和语句可以获得更广泛的锁定操作
+* Lock 中提供了获得锁和释放锁的方法（手动上锁、手动释放锁）
+* void lock(); 获得锁
+* void unlock(); 释放锁
+* Lock 是接口不能直接实例化，采用它的实现类 ReentrantLock 来实例化
+* ReentrantLock 的构造方法
+* ReentrantLock(); 创建一个 ReentrantLock 的实例
+```java
+package pm.safe;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class MyRunnable2 implements Runnable {
+    // 共享
+    private int ticker = 0;
+    private final Lock l = new ReentrantLock();
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            while (true) {
+                // 手动上锁
+                l.lock();
+                try {
+                    if (ticker == 100) {
+                        break;
+                    } else {
+                        try {
+                            Thread.sleep(10);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        ticker++;
+                        System.out.println(Thread.currentThread().getName() + "正在卖第" + ticker + "张票");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    // 手动释放锁
+                    l.unlock();
+                }
+            }
+        }
+    }
+}
+```
