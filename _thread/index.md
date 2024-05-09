@@ -294,3 +294,11 @@ public class MyRunnable2 implements Runnable {
 * 接口：Iterable、Collection、Queue、BlockingQueue
 * 实现类：ArrayBlockingQueue 底层是数组，有界
 * LinkedBlockingQueue 底层是链表，无界，但不是真正的无界，最大为 int 的最大值
+
+## 线程的状态
+* 新建状态（NEW） -> 创建线程对象
+* 就绪状态（RUNNABLE） -> start 方法
+* 阻塞状态（BLOCKED）-> 无法获得锁对象
+* 等待状态（WAITING）-> wait 方法
+* 计时等待（TIMED_WAITING）-> sleep 方法
+* 结束状态（TERMINATED）-> 全部代码运行完毕
