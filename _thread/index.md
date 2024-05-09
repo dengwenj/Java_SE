@@ -256,3 +256,7 @@ public class MyRunnable2 implements Runnable {
     }
 }
 ```
+
+## 死锁
+* 两个锁嵌套起来了
+* 解决：不要让两个锁嵌套起来
