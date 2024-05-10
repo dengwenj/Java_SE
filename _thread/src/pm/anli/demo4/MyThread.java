@@ -11,8 +11,6 @@ public class MyThread extends Thread {
     private static double money = 100;
     // 共用一把锁🔐
     private static final Lock l = new ReentrantLock();
-    // TODO 最小抽奖金额
-    static final double MIN = 0.01;
 
     private static final Random r = new Random();
 
@@ -46,16 +44,16 @@ public class MyThread extends Thread {
                         v = r.nextDouble(((money / redNum)) * 2) + 0.01;
                         // 保留 2 为小数
                         v = Double.parseDouble(String.format("%.2f", v));
-                        // 剩余的钱
-                        money -= v;
-                        money = Double.parseDouble(String.format("%.2f", money));
                     }
+                    // 剩余的钱
+                    money -= v;
+                    money = Double.parseDouble(String.format("%.2f", money));
                     // 剩余的红包个数
                     redNum--;
                     // 抢到的人不能再抢了 停止线程
                     stopThread();
                     System.out.println(getName() + "抢到了 " + v + " 元");
-                }
+                } 
             } finally {
                 l.unlock(); // 释放锁 无论如何都会走当这里，即使 return 了
             }

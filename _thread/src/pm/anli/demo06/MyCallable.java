@@ -37,7 +37,7 @@ public class MyCallable implements Callable<ArrayList<Integer>> {
             } finally {
                 l.unlock();
             }
-
+            Thread.sleep(100);
         }
         return otherList;
     }

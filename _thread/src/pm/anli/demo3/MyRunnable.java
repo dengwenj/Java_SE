@@ -12,19 +12,22 @@ public class MyRunnable implements Runnable {
     @Override
     public void run() {
         while (true) {
-            // 锁上
-            l.lock();
-            if (num >= 100) {
-                break;
-            } else {
-                // 奇数
-                if (num % 2 != 0) {
-                    System.out.println(Thread.currentThread().getName() + " -> 正在获取的奇数是：" + num);
+            try {
+                // 锁上
+                l.lock();
+                if (num >= 100) {
+                    break;
+                } else {
+                    // 奇数
+                    if (num % 2 != 0) {
+                        System.out.println(Thread.currentThread().getName() + " -> 正在获取的奇数是：" + num);
+                    }
+                    num++;
                 }
-                num++;
+            } finally {
+                // 释放锁
+                l.unlock();
             }
-            // 释放锁
-            l.unlock();
         }
     }
 }

@@ -12,11 +12,17 @@ public class Test {
         // xxx 没抢到
         // xxx 没抢到
 
-        MyThread t1 = new MyThread();
-        MyThread t2 = new MyThread();
-        MyThread t3 = new MyThread();
-        MyThread t4 = new MyThread();
-        MyThread t5 = new MyThread();
+//        MyThread t1 = new MyThread();
+//        MyThread t2 = new MyThread();
+//        MyThread t3 = new MyThread();
+//        MyThread t4 = new MyThread();
+//        MyThread t5 = new MyThread();
+
+        MyThread2 t1 = new MyThread2();
+        MyThread2 t2 = new MyThread2();
+        MyThread2 t3 = new MyThread2();
+        MyThread2 t4 = new MyThread2();
+        MyThread2 t5 = new MyThread2();
 
         t1.setName("朴睦");
         t2.setName("李雷");

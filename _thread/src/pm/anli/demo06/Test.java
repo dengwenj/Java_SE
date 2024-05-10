@@ -32,6 +32,7 @@ public class Test {
         t1.start();
         t2.start();
 
+        // FutureTask  get 方法会阻塞后面的代码
         ArrayList<Integer> list1 = ft1.get();
         ArrayList<Integer> list2 = ft2.get();
 
