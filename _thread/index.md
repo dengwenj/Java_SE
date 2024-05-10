@@ -332,3 +332,11 @@ public class MyRunnable2 implements Runnable {
 * ThreadPoolExecutor.DiscardPolicy。丢弃任务，但是不抛出异常，不推荐
 * ThreadPoolExecutor.DiscardOldestPolicy。抛弃队列中等待最久的任务，然后把当前任务加入队列中
 * ThreadPoolExecutor.CallerRunsPolicy。调用任务的 run() 方法绕过线程池直接执行
+
+## 自定义线程池总结
+* 1、创建一个空的池子
+* 2、有任务提交时，线程池会创建线程去执行任务，执行完毕归还线程
+* 不断的提交任务，会有以下三个临界点：
+* ① 当核心线程满时，再提交任务就会排队
+* ② 当核心线程满，队伍满时，会创建临时线程
+* ③ 当核心线程满，队伍满，临时线程满时，会触发任务拒绝策略
