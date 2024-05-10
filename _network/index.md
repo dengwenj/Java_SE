@@ -56,3 +56,15 @@
 * 传输控制协议TCP（Transmission Control Protocol）
 * TCP 协议是面向连接的通信协议
 * 速度慢，没有大小限制，数据安全
+
+## UDP 通信程序（发送数据）
+* 1、创建发送端的 DatagramSocket 对象
+* 2、数据打包（DatagramPacket）
+* 3、发送数据
+* 4、释放资源
+
+## UDP 通信程序（接收数据）
+* 1、创建接收端的 DatagramSocket 对象
+* 2、接收打包好的数据
+* 3、解析数据包
+* 4、释放资源
