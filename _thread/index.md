@@ -302,3 +302,18 @@ public class MyRunnable2 implements Runnable {
 * 等待状态（WAITING）-> wait 方法
 * 计时等待（TIMED_WAITING）-> sleep 方法
 * 结束状态（TERMINATED）-> 全部代码运行完毕
+
+## 线程主要核心原理
+* 1、创建一个池子，池子中是空的
+* 2、提交任务时，池子会创建新的线程对象，任务执行完毕，线程归还给池子，下回再次提交任务时，不需要创建新的线程，直接复用已有的线程即可
+* 3、但是如果提交任务时，池子中没有空闲线程，也无法创建新的线程，任务就会排队等待
+
+## 线程池代码实现
+* 1、创建线程池
+* 2、提交任务
+* 3、所有的任务全部执行完毕，关闭线程池（一般不关闭）
+
+## 线程池代码实现
+* Executors：线程池的工具类通过调用方法返回不同类型的线程池对象
+* public static ExecutorService newCachedThreadPool(); 创建一个没有上限的线程池
+* public static ExecutorService newFixedThreadPool(int nThreads); 创建有上限的线程池
