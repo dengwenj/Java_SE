@@ -18,7 +18,9 @@ public class SendMessage {
         String str = "你好，朴睦";
         byte[] bytes = str.getBytes();
         // 需要发到哪台电脑
-        InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
+        //InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
+        // 广播只需要改成 255.255.255.255 就行了
+        InetAddress inetAddress = InetAddress.getByName("255.255.255.255");
         int port = 1209;
         DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length, inetAddress, port);
 

@@ -11,9 +11,9 @@ public class ReceiveMessage {
         // 细节：
         // 在接收的时候，一定要绑定端口
         // 而且绑定的端口一定要跟发送的端口保持一致
-        // DatagramSocket datagramSocket = new DatagramSocket(1209);
-        InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
-        DatagramSocket datagramSocket = new DatagramSocket(1209, inetAddress);
+        DatagramSocket datagramSocket = new DatagramSocket(1209);
+        //InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
+        //DatagramSocket datagramSocket = new DatagramSocket(1209, inetAddress);
 
         // 接收数据包
         byte[] bytes = new byte[1024];
