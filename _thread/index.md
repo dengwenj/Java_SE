@@ -317,3 +317,18 @@ public class MyRunnable2 implements Runnable {
 * Executors：线程池的工具类通过调用方法返回不同类型的线程池对象
 * public static ExecutorService newCachedThreadPool(); 创建一个没有上限的线程池
 * public static ExecutorService newFixedThreadPool(int nThreads); 创建有上限的线程池
+
+## 自定义线程池
+* 参数一：核心线程数量，不能小于0
+* 参数二：最大线程数，不能小于0，最大数量 >= 核心线程数量
+* 参数三：空闲线程最大存活时间，不能小于0
+* 参数四：时间单位，用 TimeUnit 指定
+* 参数五：任务队列，不能为 null
+* 参数六：创建线程工厂，不能为 null
+* 参数七：任务的拒绝策略，不能为 null
+
+## 自定义线程池（任务拒绝策略）
+* ThreadPoolExecutor.AbortPolicy。默认策略：丢弃任务并抛出 RejectedExecution 异常
+* ThreadPoolExecutor.DiscardPolicy。丢弃任务，但是不抛出异常，不推荐
+* ThreadPoolExecutor.DiscardOldestPolicy。抛弃队列中等待最久的任务，然后把当前任务加入队列中
+* ThreadPoolExecutor.CallerRunsPolicy。调用任务的 run() 方法绕过线程池直接执行
