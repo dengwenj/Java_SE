@@ -33,3 +33,16 @@
 * Field 类中用于创建对象的方法
 * void set(Object obj, Object value); 赋值
 * Object get(Object obj); 获取值
+
+## 利用反射获取成员方法
+* Class 类中用于获取成员方法的方法
+* Method[] getMethods(); 返回所有公共成员方法对象的数组，包括继承的
+* Method[] getDeclaredMethods(); 返回所有成员方法对象的数组，不包括继承的
+* Method getMethod(String name, Class<?>... parameterTypes); 返回单个公共成员方法对象
+* Method getDeclaredMethod(String name, Class<?>... parameterTypes); 返回单个成员方法对象
+* 
+* Method 类中用于创建对象的方法
+* Object invoke(Object obj, Object... args); 运行方法
+* 参数一：用 obj 对象调用该方法
+* 参数二：调用方法传递的参数（没有可以不写）
+* 返回值：方法的返回值（没有可以不写）
