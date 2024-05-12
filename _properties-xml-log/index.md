@@ -41,3 +41,17 @@
 ## XML 的作用和应用场景
 * 本质是一种数据格式，可以存储复杂的数据结构，和数据关系
 * 应用场景：经常用来做为系统的配置文件，或者作为一种特殊的数据结构，在网络中进行传输
+
+## 解析 XML 文件
+* 使用程序读取 XML 文件中的数据
+* 注意：我们并不需要自己写原始的 IO 流代码来解析 XML，难度较大！也相当繁琐
+* 其实，有很多开源的，解析 XML 的包，最知名的事：Dom4j
+
+## Dom4j 解析 XML 得到 Document 对象
+* SAXReader：Dom4j 提供的解析器
+* 构造方法：public SAXReader(); 构建 Dom4j 的解析器对象
+* public Document read(String url); 把 XML 文件读成 Document 对象
+* public Document read(InputStream is); 通过字节输入流读取 XML 文件
+
+# Document
+* Element getRootElement(); 获得根元素对象

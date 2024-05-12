@@ -2,7 +2,7 @@
 <!-- 上面的必须要写在第一行 -->
 
 <users>
-    <user>
+    <user id="1">
         <name>朴睦</name>
         <sex>男</sex>
         <data>1 &lt;</data>
@@ -12,7 +12,7 @@
             ]]>
         </div>
     </user>
-    <user>
+    <user id="2">
         <name>韩梅梅</name>
         <sex>女</sex>
         <data>2 &lt;</data>
