@@ -109,3 +109,18 @@
 * 2、将 Logback 框架的核心配置文件 logback.xml 直接拷贝到 src 目录下
 * 3、创建 Logback 框架提供的 Logger 对象，然后用 Logger 对象调用其提供的方法就可以记录系统的日志信息
 * public static final Logger LOGGER = LoggerFactory.getLogger("类名);
+
+## 核心配置文件 logback.xml
+* 对 Logback 日志框架进行控制
+
+## 什么是日志级别？
+* 日志级别指的是日志信息的类型，日志都会分级别，常见的日志级别如下（优先级依次升高）：
+* 1、trace：追踪，指明程序运行轨迹
+* 2、debug：调式，实际应用中一般将其作为最低级别，而 trace 则很少使用
+* 3、info：输出重要的运行信息，数据连接、网络连接、IO操作等，使用较多
+* 4、warn：警告信息，可能会发生问题，使用较多
+* 5、error：错误信息，使用较多
+
+## 为什么要学习日志级别？
+* <root level="info">...</root>，logger 配置文件里的
+* 只有日志的级别是大于或等于核心配置文件配置的日志级别，才会被记录，否则不记录
