@@ -64,3 +64,6 @@
 * public String attributeValue(String name); 通过属性名直接得到属性值
 * public String elementText(String 子元素名); 得到指定名称的子元素的文本
 * public String getText(); 得到文本
+
+## 如何使用程序把数据写出到 XML 文件中去？
+* 推荐直接把程序里的数据拼接成 XML 格式，然后用 IO 流写出去
