@@ -1,0 +1,4 @@
+2024-05-12 18:50:27.457 [main] INFO  loggerName - chu方法开始执行
+2024-05-12 18:50:27.460 [main] DEBUG loggerName - 参数a:10
+2024-05-12 18:50:27.460 [main] DEBUG loggerName - 参数b:0
+2024-05-12 18:50:27.460 [main] ERROR loggerName - chu方法执行失败嘞

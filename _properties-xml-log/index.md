@@ -86,3 +86,26 @@
 * 1、编写 schema 约束文档，后缀必须是 .xsd
 * 2、在需要编写的 XML 文件中导入该 schema 约束文档
 * 3、按照约束内容编写 XML 文件的标签
+
+## 日志
+* 希望系统能记住某些数据是被谁操作的，比如被谁删除了
+* 想分析用户浏览系统的具体情况，以便挖掘用户的具体喜好
+* 当系统在开发中或者上线后出现了 bug，该通过什么去分析、定位 bug
+
+## 日志技术
+* 可以将系统执行的信息，方便的记录到指定的位置（控制台、文件中、数据库中）
+* 可以随时以开关的形式控制日志的启停，无需侵入到源代码中去进行修改
+
+## Logback 日志框架有以下几个模块
+* logback-core：基础模块，是其他两个模块依赖的基础
+* logback-classic：完整实现了 slf4j API 的模块
+* logback-access
+* 想使用 Logback 日志框架，至少需要再项目中整合如下三个模块：
+* slf4j-api：日志结构，logback-core，logback-classic
+
+## Logback 快速入门
+* 实现步骤
+* 1、导入 Logback 框架到项目中
+* 2、将 Logback 框架的核心配置文件 logback.xml 直接拷贝到 src 目录下
+* 3、创建 Logback 框架提供的 Logger 对象，然后用 Logger 对象调用其提供的方法就可以记录系统的日志信息
+* public static final Logger LOGGER = LoggerFactory.getLogger("类名);
