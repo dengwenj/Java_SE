@@ -55,3 +55,12 @@
 
 # Document
 * Element getRootElement(); 获得根元素对象
+
+## Element 提供的方法
+* public String getName(); 得到元素名字
+* public List<Element> elements(); 得到当前元素下所有子元素
+* public List<Element> elements(String name); 得到当前元素下指定名字的子元素返回集合
+* public Element element(String name); 得到当前元素下指定名字的子元素，如果有很多名字相同的返回第一个
+* public String attributeValue(String name); 通过属性名直接得到属性值
+* public String elementText(String 子元素名); 得到指定名称的子元素的文本
+* public String getText(); 得到文本
