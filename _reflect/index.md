@@ -11,3 +11,14 @@
 * 1、Class.forName("全类名")
 * 2、类名.class
 * 3、对象.getClass()
+
+## 利用反射获取构造方法
+* Class 类中用于获取构造方法的方法
+* Constructor<?>[] getConstructors(); 返回所有公共构造方法对象的数组
+* Constructor<?>[] getDeclaredConstructors(); 返回所有构造方法对象的数组
+* Constructor<T> getConstructor(Class<?>... parameterTypes); 返回单个公共构造方法对象
+* Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes); 返回单个构造方法对象
+* 
+* Constructor 类中用于创建对象的方法
+* setAccessible(boolean flag); 设置为 true，表示取消访问检查
+* T newInstance(Object... initArgs); 根据指定的构造方法创建对象
