@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 上面的必须要写在第一行 -->
+
+<users>
+    <user>
+        <name>朴睦</name>
+        <sex>男</sex>
+        <data>1 &lt;</data>
+        <div>
+            <![CDATA[
+                2 < 1
+            ]]>
+        </div>
+    </user>
+    <user>
+        <name>韩梅梅</name>
+        <sex>女</sex>
+        <data>2 &lt;</data>
+        <div>
+            <![CDATA[
+                2 < 1
+            ]]>
+        </div>
+    </user>
+</users>
