@@ -32,7 +32,7 @@ public class BigStar implements Star {
 
     @Override
     public String eat(String name) {
-        System.out.println(this.name + "吃饭" + name);
+        System.out.println(this.name + "正在" + name);
         return "吃饱了";
     }
 
