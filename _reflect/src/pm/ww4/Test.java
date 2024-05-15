@@ -3,6 +3,7 @@ package pm.ww4;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.lang.reflect.Type;
 
 public class Test {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -46,6 +47,10 @@ public class Test {
         Parameter[] parameters = declaredMethod.getParameters();
         for (Parameter parameter : parameters) {
             System.out.println(parameter);
+            String name1 = parameter.getName();
+            System.out.println(name1);
+            Class<?> type = parameter.getType();
+            System.out.println(type.getName().equals("java.lang.String"));
         }
         System.out.println("------------------------------");
 
