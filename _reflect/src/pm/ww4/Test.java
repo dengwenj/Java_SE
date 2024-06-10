@@ -9,7 +9,9 @@ public class Test {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // 获取 class 字节码对象
         Class clazz = Class.forName("pm.ww4.Student");
-
+        Type genericSuperclass = Test.class.getGenericSuperclass();
+        // 获取泛型
+        System.out.println(genericSuperclass);
         // 获取公共所有方法,包括父类
         Method[] methods = clazz.getMethods();
         for (Method method : methods) {
