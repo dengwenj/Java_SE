@@ -12,6 +12,11 @@ public class Student {
     public Student(String name, int age) {
         this.name = name;
         this.age = age;
+        method();
+    }
+
+    public static void method() {
+
     }
 
     /**
