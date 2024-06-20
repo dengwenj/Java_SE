@@ -5,5 +5,7 @@ public class Test {
         PuMu puMu = new PuMu();
         puMu.method();
         puMu.show();
+
+        Inter.Ww();
     }
 }
