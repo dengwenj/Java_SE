@@ -312,3 +312,27 @@ public class Test {
 * 枚举类的构造器都是私有的（写不写都是私有的），因此枚举类对外不能创建对象
 * 枚举都是最终类，不可以被继承
 * 有一些枚举提供的内置方法
+
+## 枚举的应用场景
+* 用来表示一组信息，然后作为参数进行传输（做标记、分类）
+* 代码可读性好，参数值得到嘞约束，对使用者更友好
+```java
+package vip.dengwj._enum;
+
+public class Test {
+    public static void main(String[] args) {
+        AWW z = AWW.Z;
+        z.method();
+
+        method(z);
+    }
+
+    public static void method(AWW aww) {
+        if (aww == AWW.Z) {
+            System.out.println("zzzzz");
+        } else if (aww == AWW.Y) {
+            System.out.println("yyyy");
+        }
+    }
+}
+```
