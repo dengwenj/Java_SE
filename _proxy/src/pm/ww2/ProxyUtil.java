@@ -10,7 +10,7 @@ public class ProxyUtil {
             ProxyUtil.class.getClassLoader(),
             new Class[]{Star.class},
             new InvocationHandler() {
-                @Override
+                @Override // 回调方法
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                     // args 传的参数
                     if (method.getName().equals("sing")) {
@@ -18,7 +18,11 @@ public class ProxyUtil {
                     } else if (method.getName().equals("dance")) {
                         System.out.println("准备场地跳舞了");
                     }
-                    return method.invoke(star, args);
+                    long start = System.currentTimeMillis();
+                    Object val = method.invoke(star, args);
+                    long end = System.currentTimeMillis();
+                    System.out.println(end - start);
+                    return val;
                 }
             }
         );
