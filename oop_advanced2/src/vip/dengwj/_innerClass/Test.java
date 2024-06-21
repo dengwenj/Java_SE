@@ -10,12 +10,13 @@ public class Test {
         Outer.Inner inner = new Outer().new Inner();
 
         // 这是个实现类对象
-        new Swim() {
+        Swim s = new Swim() {
             @Override
             public void swim() {
                 System.out.println("重写方法");
             }
         };
+        s.swim();
 
         // 这个 Outer 类的子类
         Outer o = new Outer() {
