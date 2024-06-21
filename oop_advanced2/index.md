@@ -253,3 +253,47 @@ public abstract class Person {
 ## 如何调用静态内部类中的方法
 * 非静态方法：先创建对象，用对象调用
 * 静态方法：外部类名.内部类名.方法名()
+
+## 匿名内部类
+* 匿名内部类本质上就是隐藏了名字的内部类
+
+## 什么是匿名内部类？
+* 隐藏了名字的内部类，可以写在成员位置，也可以写在局部位置
+
+## 格式
+* new 类名或者接口名() { 重写方法 };
+
+## 格式的细节
+* 包含了继承或实现，方法重写，创建对象
+* 整体就是一个类的子类对象或者接口的实现类对象
+
+## 使用场景
+* 当方法的参数是接口或者类时，以接口为例，可以传递这个接口的实现类对象，如果实现类只使用一次，就可以用匿名内部类简化代码
+```java
+package vip.dengwj._innerClass;
+
+import vip.dengwj._interface.Swim;
+
+public class Test {
+    public static void main(String[] args) {
+        Car car = new Car("小米苏7", 1);
+        car.show();
+
+        Outer.Inner inner = new Outer().new Inner();
+
+        // 这是个实现类对象
+        new Swim() {
+            @Override
+            public void swim() {
+                System.out.println("重写方法");
+            }
+        };
+
+        // 这个 Outer 类的子类，Outer 是父类
+        Outer o = new Outer() {
+
+        };
+        Outer.Inner inner1 = o.new Inner();
+    }
+}
+```
